@@ -1,10 +1,27 @@
 # 이름 공간(namespace)
 `c++ 16 ~ 21`
 
-### 명령어의 출처 표시 
+### namespace란?
+
+- 명령어의 출처 표시
+
+```cpp
+#include <iostream>
+
+int main() {
+    
+    std::cout << "hello"; // cout 명령어의 출처 -> std 표시
+
+    return 0;
+}
+
+```
+
+### namespace 공간 정의 
 
 ```cpp
 // header1.h 내용
+
 namespace header1 {
     int foo();
     void bar();
@@ -12,6 +29,7 @@ namespace header1 {
 ```
 ```cpp
 // header2.h 내용
+
 namespace header2  {
     int foo();
     void bar();
