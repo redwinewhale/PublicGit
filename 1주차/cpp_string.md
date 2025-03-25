@@ -60,7 +60,7 @@ int main() {
 }
 ```
 
-###### 문자열 길이 구하기(length(), size())
+##### 문자열 길이 구하기(length(), size())
 
 ```cpp
 string str = "Hello, World!";
@@ -69,7 +69,7 @@ cout << "str size: " << str.size() << endl;   // 13
 // length() == size()
 ```
 
-###### 문자열 합치기(+)
+##### 문자열 합치기(+)
 
 ```cpp
 string a = "Hello, ";
@@ -86,7 +86,7 @@ cout << str[0] << endl;  // 'H'
 cout << str.at(1) << endl;  // 'e'
 ```
 
-###### 문자열 비교`사전순`(==, !=, <, >)
+##### 문자열 비교`사전순`(==, !=, <, >)
 
 ```cpp
 string a = "apple";
@@ -173,7 +173,7 @@ int main() {
     return 0;
 }
 ```
-- char &c : str의 의미 `레퍼런스 개념`
+- char &c : str의 의미 `레퍼런스 개념`  
     char &c → str 문자열의 각 문자를 참조하는 변수 (&를 붙여서 원본을 직접 수정 가능)  
     str → 순회할 대상(문자열)  
     ```cpp
