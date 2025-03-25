@@ -1,5 +1,4 @@
 # 이름 공간(namespace)
-`c++ 16 ~ 21`
 
 ### namespace란?
 
