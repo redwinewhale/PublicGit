@@ -1,8 +1,7 @@
-# basic
-### 이름 공간(namespace)
+# 이름 공간(namespace)
 `c++ 16 ~ 21`
 
-명령어의 출처 표시 
+### 명령어의 출처 표시 
 
 ```cpp
 // header1.h 내용
@@ -29,7 +28,7 @@ namespace header1 {
 }
 ```
 
-아무 이름 공간에서 소속 되지 않은 경우 아래와 같이 선언 필요
+### 아무 이름 공간에서 소속 되지 않은 경우 아래와 같이 선언 필요
 
 ```cpp
 #include "header1"
@@ -40,7 +39,7 @@ int func() {
 }
 ```
 
-namespace 생략 하고 싶을 시
+### namespace 생략 하고 싶을 시
 
 ```cpp
 #include "header1"
