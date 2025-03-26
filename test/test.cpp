@@ -1,8 +1,7 @@
-#include <iostream>
-using namespace std;
+#include <cstdio>
 
 int main() {
-    cout << "Hello World!" << endl;
-    cout << "I am a C++ program. OK?" << endl;
+    int a = 10, b = 20;
+    printf("값: %d %d\n", a, b);
     return 0;
 }
