@@ -1,9 +1,9 @@
 # 일차원 배열 선언 방법
 
 ```cpp
-int arr1[5];                
+int arr1[5];              
 // 선언만 하고 초기화 X (쓰레기 값 저장됨)
-int arr2[5] = {1, 2, 3};     
+int arr2[5] = {1, 2, 3};   
 // 나머지 요소는 0으로 자동 초기화 -> {1, 2, 3, 0, 0}
 int arr3[] = {10, 20, 30, 40}; 
 // 크기 생략 가능 (자동으로 4로 설정됨)
@@ -70,3 +70,54 @@ int arr[5] = {10, 20, 30, 40, 50};
 cout << arr[0] << endl;  // 10
 cout << arr[4] << endl;  // 50
 ```
+
+# 문자열 입력
+
+### cin 사용(공백 미포함)
+
+```cpp
+int main() {
+    char str[20];
+    cout << "문자열 입력: ";
+    cin >> str;
+    cout << "입력된 문자열: " << str << endl;
+}
+```
+
+### cin.get(str, num) 사용(공백 포함)
+
+```cpp
+int main() {
+    char str[20];
+    cout << "문자열 입력: ";
+    cin.get(str, 20);  // 최대 19글자 + 마지막 '\0' (널 문자)
+    cout << "입력된 문자열: " << str << endl;
+    return 0;
+}
+```
+
+### cin.getline(str, num) 사용(공백 포함)
+
+```cpp
+int main() {
+    char str[20];
+    cout << "문자열 입력: ";
+    cin.getline(str, 20);  // 최대 20글자
+    cout << "입력된 문자열: " << str << endl;
+    return 0;
+}
+```
+
+### getline(cin, str)
+
+```cpp
+int main() {
+    int num;
+    cin << num;
+    cin.ignore();  // 입력 버퍼에 남아있는 개행 문자 제거
+    
+    string str;
+    getline(str, 20);
+    cout << str;
+    return 0;
+}
