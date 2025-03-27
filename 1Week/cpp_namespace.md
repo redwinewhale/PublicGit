@@ -8,7 +8,7 @@
 #include <iostream>
 
 int main() {
-    
+
     std::cout << "hello"; // cout 명령어의 출처 -> std 표시
 
     return 0;
