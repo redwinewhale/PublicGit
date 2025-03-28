@@ -103,12 +103,6 @@ int main() {
 }
 ```
 
-# 입출력 (기초 - 심화 문제)
-### 기초 문제
-
-- 정수와 실수 입력  
-    >정수 a, 실수 b를 입력받고, b를 소수 a번째 자리까지 출력하세요.
-
 # 반복문 (기초 - 심화 문제)
 ### 기초 문제
 
@@ -451,39 +445,174 @@ int main() {
 3. 특정 문자 개수 세기
     >사용자가 입력한 문자열에서 특정 문자의 개수를 세어 출력하는 프로그램을 작성하시오.
 
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    char ch;
+    string str;
+    size_t size;
+    size_t num = 0;
+
+    cout << "input str: ";
+    cin >> str;
+    size = str.length();
+
+    cout << "input ch: ";
+    cin >> ch;
+
+    for (int i = 0; i < size; i++)
+        if (str[i] == ch) num++;
+
+    cout << ch << "의 개수: " << num;
+    return 0;
+}
+```
+
 ### 중급 문제
 1. 회문 검사
     >사용자가 입력한 문자열이 앞뒤로 동일한지(회문인지) 검사하는 프로그램을 작성하시오.
 
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string str;
+    size_t size;
+    
+    cout << "input std: ";
+    cin >> str;
+    size = str.length();
+
+    if (size % 2 == 0) {
+        for (int i = 0; i < size / 2; i ++) {
+            if (str[i] != str[size - i - 1]) {
+                cout << "No";
+                return 0;
+            }
+        }
+    } else {
+        for (int i = 0; i < (size - 1) / 2; i ++) {
+            if (str[i] != str[size - i - 1]) {
+                cout << "No";
+                return 0;
+            }
+        }
+    }
+
+    cout << "Yes";
+    return 0;
+}
+```
+
 2. 공백 제거
     >사용자가 입력한 문자열에서 공백을 모두 제거한 결과를 출력하는 프로그램을 작성하시오.
 
-3. 단어 개수 세기
-    >사용자가 입력한 문장에서 단어의 개수를 출력하는 프로그램을 작성하시오.
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
 
-4. 특정 문자열 찾기
-    >사용자가 입력한 문자열에서 특정 부분 문자열이 존재하는지 확인하고, 위치를 출력하는 프로그램을 작성하시오.
+int main() {
+    string str;
+    size_t size;
+    
+    cout << "input str: ";
+    getline(cin, str);
+    size = str.length();
+
+    for (int i = 0; i < size; i ++) {
+        if (str[i] == ' ') {
+            str.erase(i, 1);
+            i--;
+        }
+    }
+    cout << str;
+    return 0;
+}
 ```
-banana
-ana
 
-'ana'는 1번째 위치에서 시작합니다.
+3. 특정 문자열 찾기
+    >사용자가 입력한 문자열에서 특정 부분 문자열이 존재하는지 확인하고, 위치를 출력하는 프로그램을 작성하시오.
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string str, search;
+    size_t size_str, size_search;
+    
+    int check = 0;
+    int start_num;
+    
+    cout << "input str: ";
+    cin >> str;
+    size_str = str.length();
+
+    cout << "input search: ";
+    cin >> search;
+    size_search = search.length();
+
+    for (int i = 0; i < size_str; i ++) {
+        if (str[i] == search[0]) {
+            for (int j = 0; j < size_search; j ++) {
+                if (str[i+j] != search[j]) break;
+                if (j == size_search - 1) {
+                    start_num = i;
+                    cout << start_num << "위치 시작" << endl;
+                    check = 1;
+                }
+            }
+        }
+    }
+    if (check == 0) cout << "No";
+    
+    return 0;
+}
 ```
 
 ### 심화 문제
 1. 아나그램 검사
     >두 개의 문자열이 아나그램(Anagram, 철자만 바꿔서 같은 단어가 될 수 있는 관계) 인지 확인하는 프로그램을 작성하시오.
-```
-listen
-silent
-```
+```cpp
+# include <iostream>
+# include <string>
 
-2. 문자열 압축하기
-    >같은 문자가 연속해서 나타나면 개수를 붙여 압축하는 프로그램을 작성하시오.
-```
-aaabbcddd
+using namespace std;
 
-a3b2c1d3
+int main() {
+    string str1, str2;
+    int len1, len2;
+    int check, check_num1 = 0, check_num2 = 0;
+
+    cout << "input str1: ";
+    cin >> str1;
+    len1 = str1.length();
+
+    cout << "input str2: ";
+    cin >> str2;
+    len2 = str2.length();
+
+    for (int i = 65; i < 123; i++) {
+        for (int j = 0; j < len1; j ++) {
+            if(str1[j] == i) check_num1++;
+        }
+        for (int j = 0; j < len2; j ++) {
+            if(str2[j] == i) check_num2++;
+        }
+        if (check_num1 != check_num2) {
+            cout << "No";
+            return 0;
+        }
+    }
+    cout << "yes";
+    return 0;
+}
 ```
 
 # 다차원 배열 (기초 ~ 심화)
