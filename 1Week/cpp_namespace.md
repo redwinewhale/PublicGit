@@ -36,6 +36,7 @@ namespace header2  {
 ```
 ```cpp
 #include "header1.h" 
+#include "header1.h"
 
 namespace header1 {
     int func() {

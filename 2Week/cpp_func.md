@@ -66,6 +66,7 @@ int main() {
 | int arr[num]        | int arr[num]                             |
 | int arr[num1][num2] | int arr[num1][num2]<br />int arr[][num2] |
 | string str          | string str                               |
+|                     | auto name                                |
 
 # 함수의 선언과 정의
 

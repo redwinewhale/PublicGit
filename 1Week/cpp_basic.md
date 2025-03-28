@@ -30,6 +30,16 @@
 |:-|:-|:-|
 |bool|1 bytes|true / false|
 
+### 추론형
+
+- auto [name]
+  
+```cpp
+auto x = 10;       // int
+auto y = 3.14;     // double
+auto z = "hello";  // const char[6]
+```
+
 ### 형변환
 
 - (바꾸려는 형) 변수 이름
