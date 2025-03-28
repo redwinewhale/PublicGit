@@ -397,6 +397,95 @@ int main() {
 }
 ```
 
+# 문자열 (기초 - 심화 문제)
+### 기초 문제
+1. 문자열 길이 출력하기
+    >사용자로부터 문자열을 입력받고, 문자열의 길이를 출력하는 프로그램을 작성하시오 .
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+
+    string str;
+    size_t size;
+    cout << "input str: ";
+    getline(cin, str);
+    size = str.length();
+    cout << size;
+    
+    return 0;
+}
+```
+
+2. 문자열 뒤집기
+    >사용자가 입력한 문자열을 거꾸로 출력하는 프로그램을 작성하시오.
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+
+    string str;
+    string temp;
+    size_t size;
+
+    cout << "input str: ";
+    getline(cin, str);
+    size = str.length();
+    temp.resize(size);
+
+    for (int i = 0; i < size; i++) {
+        temp[i] = str[size - i - 1];
+    }
+    cout << temp;
+
+    return 0;
+}
+```
+
+3. 특정 문자 개수 세기
+    >사용자가 입력한 문자열에서 특정 문자의 개수를 세어 출력하는 프로그램을 작성하시오.
+
+### 중급 문제
+1. 회문 검사
+    >사용자가 입력한 문자열이 앞뒤로 동일한지(회문인지) 검사하는 프로그램을 작성하시오.
+
+2. 공백 제거
+    >사용자가 입력한 문자열에서 공백을 모두 제거한 결과를 출력하는 프로그램을 작성하시오.
+
+3. 단어 개수 세기
+    >사용자가 입력한 문장에서 단어의 개수를 출력하는 프로그램을 작성하시오.
+
+4. 특정 문자열 찾기
+    >사용자가 입력한 문자열에서 특정 부분 문자열이 존재하는지 확인하고, 위치를 출력하는 프로그램을 작성하시오.
+```
+banana
+ana
+
+'ana'는 1번째 위치에서 시작합니다.
+```
+
+### 심화 문제
+1. 아나그램 검사
+    >두 개의 문자열이 아나그램(Anagram, 철자만 바꿔서 같은 단어가 될 수 있는 관계) 인지 확인하는 프로그램을 작성하시오.
+```
+listen
+silent
+```
+
+2. 문자열 압축하기
+    >같은 문자가 연속해서 나타나면 개수를 붙여 압축하는 프로그램을 작성하시오.
+```
+aaabbcddd
+
+a3b2c1d3
+```
+
 # 다차원 배열 (기초 ~ 심화)
 ### 기초 문제
 1. 문제 1: 2차원 배열 선언 및 출력

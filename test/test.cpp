@@ -1,30 +1,23 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
-    int matrix[3][3];
-    int rotated[3][3]; 
+    char ch;
+    string str;
+    size_t size;
+    size_t num = 0;
 
-    cout << endl;
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            cin >> matrix[i][j];
-        }
-    }
-    
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            rotated[j][2 - i] = matrix[i][j];
-        }
-    }
+    cout << "input str: ";
+    cin >> str;
+    size = str.length();
 
-    cout << endl;
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            cout << rotated[i][j] << " ";
-        }
-        cout << endl;
-    }
+    cout << "\ninput ch: ";
+    cin >> ch;
 
+    for (int i = 0; i < size; i++)
+        if (str[i] == ch) num++;
+
+    cout << ch << "의 개수: " << num;
     return 0;
 }

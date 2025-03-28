@@ -206,3 +206,8 @@ int num = 1234;
 string str = to_string(num);
 cout << str + "5" << endl;  // 12345
 ```
+
+##### string 변수 크기 설정(resize())
+```cpp
+temp.resize(size);
+```
