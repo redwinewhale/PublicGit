@@ -24,8 +24,8 @@ int main() {
                 tmp[tmp_count++] = i;
             }
         }
+        
         tmp[tmp_count] = size;
-
         tmp_location = 0;
         for (int i = 0; i < m; i++) {
             int end_pos = tmp[i];
