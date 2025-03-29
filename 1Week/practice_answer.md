@@ -390,6 +390,8 @@ int main() {
     return 0;
 }
 ```
+2. 배열 정열하기
+    >10개의 숫자를 입력 받고 내림차순 정렬 후 출력
 
 # 문자열 (기초 - 심화 문제)
 ### 기초 문제
@@ -597,6 +599,11 @@ int main() {
     cout << "input str2: ";
     cin >> str2;
     len2 = str2.length();
+
+    if (len1 != len2) {
+        cout << "No";
+        return 0;
+    }
 
     for (int i = 65; i < 123; i++) {
         for (int j = 0; j < len1; j ++) {
@@ -839,6 +846,60 @@ int main() {
     }
 
     cout << "YES" << endl;
+
+    return 0;
+}
+```
+
+4. N x M 배열 입력 받은 후 출력(최대 10)
+    >몇 곱하기 몇 배열로 할지를 먼저 입력받고 한줄 씩(공백으로 숫자 구분) 입력 받기
+
+```cpp
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    const int MAX_N = 10;
+    int arr[MAX_N][MAX_N] = {0};
+    int tmp[MAX_N] = {0};
+    int n, m, tmp_location = 0;
+    string num, tmp_num;
+
+    cout << "input N, M: ";
+    cin >> n >> m;
+    cin.ignore();
+
+    for (int j = 0; j < n; j++) {
+        getline(cin, num);
+        int size = num.length(); 
+        int tmp_count = 0; 
+        
+        for (int i = 0; i < size; i++) {
+            if (num[i] == ' ' && tmp_count < m) { 
+                tmp[tmp_count++] = i;
+            }
+        }
+        tmp[tmp_count] = size;
+
+        tmp_location = 0;
+        for (int i = 0; i < m; i++) {
+            int end_pos = tmp[i];
+            tmp_num = num.substr(tmp_location, end_pos - tmp_location);
+            arr[j][i] = stoi(tmp_num);
+            tmp_location = end_pos + 1;
+        }
+    }
+
+    cout << "---------" << endl;
+
+    for (int j = 0; j < n; j++) {
+        for (int i = 0; i < m; i++) {
+            cout << arr[j][i] << " ";
+        }
+        cout << endl;
+    }
 
     return 0;
 }
