@@ -63,7 +63,7 @@ int main() {
 | ------------------- | ---------------------------------------- |
 | int num             | int num                                  |
 | float num           | float num                                |
-| int arr[num]        | int arr[num]                             |
+| int arr[num]        | int arr[num]<br />int arr[]              |
 | int arr[num1][num2] | int arr[num1][num2]<br />int arr[][num2] |
 | string str          | string str                               |
 |                     | auto name                                |
