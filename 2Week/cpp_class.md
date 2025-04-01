@@ -29,6 +29,23 @@ public:
   > 클래스 이름과 동일해야 함
   >
 
+##### 생성자 초기화 방식
+```cpp
+class Person {
+public:
+    string name;
+    int age;
+
+    // 생성자 초기화 목록 사용
+    Person(string n, int a) : name(n), age(a) {}
+
+    // 생성자 본문에서 초기화 (비효율적)
+    Person(string n, int a) {
+        name = n;  
+        age = a;
+    }
+};
+```
 ### 소멸자
 
 - 객체가 소멸될 때 자동 호출되는 함수
