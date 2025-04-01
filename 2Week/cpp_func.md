@@ -39,7 +39,7 @@ int main() {
 }
 ```
 
-# 기본 매개변수 (Default Parameters)
+# 기본 매개변수 (Default Parameters) -> 기본값을 사용한 함수 오버로딩
 
 ```cpp
 #include <iostream>
@@ -95,6 +95,7 @@ int multiply(int a, int b) {
 ### 인라인 함수 (Inline Function)
 
 - 컴파일러가 함수 코드를 그대로 복사해서 삽입하기 때문에 호출 비용이 줄어듦
+    >짧을때 사용
 
 ```cpp
 #include <iostream>
@@ -149,3 +150,41 @@ int main() {
     return 0;
 }
 ```
+
+# 함수 오버로딩
+
+- 매개 변수의 타입이나 개수가 달라야함
+  > 이름이 같은 함수 여러 개 가능
+  > 매개변수의 개수나 타입이 다르면 컴파일러가 구분 가능
+  > 리턴 타입(return type)은 오버로딩을 결정하는 기준이 아님
+  >
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// 정수 더하기
+int add(int a, int b) {
+    return a + b;
+}
+
+// 실수 더하기 (매개변수 타입이 다름)
+double add(double a, double b) {
+    return a + b;
+}
+
+// 세 개의 정수 더하기 (매개변수 개수가 다름)
+int add(int a, int b, int c) {
+    return a + b + c;
+}
+
+int main() {
+    cout << "정수 덧셈: " << add(3, 4) << endl;         // int add(int, int) 호출
+    cout << "실수 덧셈: " << add(2.5, 3.1) << endl;   // double add(double, double) 호출
+    cout << "세 정수 덧셈: " << add(1, 2, 3) << endl; // int add(int, int, int) 호출
+
+    return 0;
+}
+```
+
+### 기본값을 사용한 함수 오버로딩

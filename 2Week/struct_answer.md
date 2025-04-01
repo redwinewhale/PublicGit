@@ -1,0 +1,105 @@
+# 기초 문제
+1. 구조체 Person을 정의하고, name과 age를 멤버로 가지도록 하세요.
+    >name은 문자열로, age는 정수로 정의하고 값을 초기화하여 출력하세요.
+
+```cpp
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct person
+{
+    string name;
+    int age;
+};
+
+int main() {
+    person p1{"윤원주",24};
+    cout << p1.name << " " << p1.age;
+    return 0;
+}
+```
+
+2. 구조체 Student를 정의하고, name, id, grade를 멤버로 가지게 하세요.
+    >구조체 변수 3개를 만들어서 학생 정보를 출력하세요.
+
+```cpp
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct Student
+{
+    string name;
+    int id;
+    double grade;
+};
+
+int main() {
+    Student s{"윤원주", 20211236, 4.5};
+    cout << s.name << s.id << s.grade;
+    return 0;
+}
+```
+
+# 중급 문제
+1. 구조체 Product를 정의하고, productName(문자열)과 price(정수) 두 멤버를 가지도록 하세요.
+    >Product 배열을 사용하여 여러 개의 제품을 입력받고, 전체 제품의 가격 합계를 출력하세요.
+
+```cpp
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct Product {
+    string product_name;
+    int price;
+};
+
+int main() {
+    int num_of_products, sum = 0;
+
+    cout << "intput number of products: ";
+    cin >> num_of_products;
+
+    Product pro[num_of_products];
+
+    for (int i = 0; i < num_of_products; i++) {
+        cout << "input product name and price: ";
+        cin >> pro[i].product_name >> pro[i].price;
+        sum += pro[i].price;
+    }
+    cout << sum;
+    return 0;
+}
+```
+
+1. 구조체 Rectangle을 정의하고, width와 height를 멤버로 가지도록 하세요.
+    >구조체를 인자로 받아 면적을 계산하는 함수를 구조체 안에 작성하세요.
+
+```cpp
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct Rectangle
+{
+    int width, height;
+
+    int getarea() {
+        return width * height;
+    }
+};
+
+int main() {
+    Rectangle r{5, 10};
+    cout << r.getarea();
+    return 0;
+}
+```
+
+# 심화 문제

@@ -3,51 +3,41 @@
 
 using namespace std;
 
-    // 구조체 선언 및 정의의
-struct Student {
-    string name;
-    int age;
-    double grade;
+class BankAccount {
+    public:
+    string account_holder;
+    double balance;
+
+    BankAccount() {
+        account_holder = "???";
+        balance = 0;
+    }
+
+    BankAccount(string _account_holder, double _balance) {
+        account_holder = _account_holder;
+        balance = _balance;
+    }
+
+    void Deposit(int money){
+        balance += money;
+    }
+    
+    void Withdraw(int money){
+        balance -= money;
+    }
+
+    void PrintBalance() {
+        cout << account_holder << ": " <<balance << "원";
+    }
 };
 
 int main() {
+    BankAccount bank1("윤원주", 10000);
+    BankAccount bank2;
 
-    // 변수 선언 및 초기화 방법
-
-    Student s1{"윤원주", 24, 4.3};
-
-    Student s2 = {"심찬희", 25, 3.8};
-
-    Student s3;
-    s3.name = "신승빈";
-    s3.age = 24;
-    s3.grade = 3.4;
-
-    Student students[3] = {
-        {"윤원주", 24, 4.3},
-        {"심찬희", 25, 3.8},
-        {"신승빈", 24, 3.4}
-    };
-
-    // 접근 및 사용법
-
-    cout << "이름: " << s1.name << endl;
-    cout << "나이: " << s1.age << endl;
-    cout << "학점: " << s1.grade << endl;
-
+    bank1.PrintBalance();
     cout << endl;
-
-    cout << "이름: " << s2.name << endl;
-    cout << "나이: " << s2.age << endl;
-    cout << "학점: " << s2.grade << endl;
-
-    cout << endl;
-
-    cout << "이름: " << s3.name << endl;
-    cout << "나이: " << s3.age << endl;
-    cout << "학점: " << s3.grade << endl;
-
-    std::cout << students[1].name << std::endl;
+    bank2.PrintBalance();
 
     return 0;
 }
