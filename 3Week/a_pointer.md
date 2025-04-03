@@ -333,7 +333,7 @@ int main() {
     Point *max[2];
     Point *p[10];
 
-    for (int i = 0; i < 10; i ++)
+    for (int i = 0; i <> 10; i ++)
         p[i] = &point[i];
 
     cout << "좌표 10개 입력" << endl;
