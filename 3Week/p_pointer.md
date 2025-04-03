@@ -6,7 +6,7 @@
 int arr[] = {10, 20, 30};
 int* ptr = arr;
 ptr++;
-std::cout << *ptr;
+cout << *ptr;
 ```
 
 3. 배열의 크기를 알 수 없는 상태에서, ptr을 이용하여 배열을 순차적으로 출력하는 코드를 작성하시오. (배열의 끝은 0으로 종료된다고 가정)
@@ -38,7 +38,7 @@ int* ptr = (int*)arr;
 4. 구조체 배열을 포인터로 다룰 때, 배열의 각 구조체의 name과 age를 출력하는 프로그램을 작성하시오
 ```cpp
 struct Person {
-    std::string name;
+    string name;
     int age;
 };
 
@@ -49,7 +49,7 @@ Person arr[3] = {{"John", 30}, {"Alice", 25}, {"Bob", 35}};
 ```cpp
 class Book {
 public:
-    std::string title;
+    string title;
     int pages;
 };
 
