@@ -65,13 +65,13 @@ char ToUpper(char ch) {
 using namespace std;
 
 int CheckPrimeNum(int num) {
-    for (int j = 2; j < num; j ++)
+    for (int j = 2; j * j <= num; j ++)
         if (num % j == 0) return 0;
     return 1;
 }
 
 int GetPrimeNum(int num) {
-    int prime_num = 1;
+    int prime_num = 0;
     if (num == 2) return 1;
     for (int i = 2; i < num; i ++)
         prime_num += CheckPrimeNum(i);
